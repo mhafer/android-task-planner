@@ -15,42 +15,49 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.missm.taskplannerapp.utilities.InterfaceUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
-    EditText mTask;
-    ViewPager viewPager;
+    private Toolbar mToolbar;
+    private ViewPager mViewPager;
+    private TabLayout mTabs;
+    private EditText mEditTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //add toolbar to main screen
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
+        //set the status color
+        InterfaceUtils.setTranslucentStatusBar(getWindow());
 
+        mEditTask = (EditText)findViewById(R.id.newTask);
+
+        //add toolbar to main screen
+        mToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(mToolbar);
 
         // Setting ViewPager for each Tabs
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-        // Set Tabs inside Toolbar
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(mViewPager);
 
-       // mTask = (EditText)findViewById(R.id.etTask);
-
-        TabLayout tabs = (TabLayout)findViewById(R.id.tab_layout);
-        tabs.setupWithViewPager(viewPager);
+        // Set Tabs inside the ViewPager
+        mTabs = (TabLayout)findViewById(R.id.tab_layout);
+        mTabs.setupWithViewPager(mViewPager);
     }
 
+    //inflate the custom toolbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options, menu);
         return true;
     }
 
+    //custom tool bar selection
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -58,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Add Task", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_settings:
-                //Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 return true;
             default:
@@ -78,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // main activities view pager adapter class
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();

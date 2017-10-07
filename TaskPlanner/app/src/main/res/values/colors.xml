@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="defaultBody">#e1e2e1</color>
+
+    <!-- default color scheme-->
+    <color name="defaultPrimary">#4db6ac</color>
+    <color name="defaultSecondary">#00867d</color>
+    <color name="defaultAccent">#82e9de</color>
+    <color name="defaultText">#FFFFFF</color>
 </resources>
