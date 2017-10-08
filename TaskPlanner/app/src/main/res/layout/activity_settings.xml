@@ -10,9 +10,9 @@
         android:layout_width="368dp"
         android:layout_height="56dp"
         android:id="@+id/setting_toolbar"
-        android:background="?attr/colorPrimary"
+        android:background="@color/defaultPrimary"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
