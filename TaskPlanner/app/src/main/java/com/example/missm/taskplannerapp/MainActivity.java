@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //set the status color
+        //set the status bar color
         InterfaceUtils.setTranslucentStatusBar(getWindow());
 
         mEditTask = (EditText)findViewById(R.id.newTask);
@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new WeekFragment(), "Week");
         viewPager.setAdapter(adapter);
     }
-
 
     // main activities view pager adapter class
     static class Adapter extends FragmentPagerAdapter {
