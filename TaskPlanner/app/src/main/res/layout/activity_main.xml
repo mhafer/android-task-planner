@@ -10,13 +10,14 @@
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/defaultPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+        android:background="?attr/colorPrimary">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/toolbar_height"
+                app:titleTextColor="?attr/textColor"
+                android:background="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|enterAlways" />
 
             <EditText
@@ -24,16 +25,17 @@
                 android:layout_height="@dimen/toolbar_height"
                 app:layout_scrollFlags="scroll|enterAlways"
                 android:paddingLeft="@dimen/edit_text_margins"
-                android:textColor="@color/defaultText"
+                android:textColor="@color/defaultLightText"
                 android:layout_marginLeft="@dimen/edit_text_margins"
                 android:layout_marginRight="@dimen/edit_text_margins"
                 android:id="@+id/newTask"
                 android:text="@string/edit_text_task_input"/>
 
-
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
-            app:tabIndicatorColor="@color/defaultAccent"
+            app:tabIndicatorColor="?colorAccent"
+            app:tabTextColor="?attr/textColor"
+            app:tabSelectedTextColor="@color/defaultBody"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"/>
 

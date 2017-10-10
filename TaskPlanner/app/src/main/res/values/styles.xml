@@ -1,11 +1,25 @@
 <resources>
 
+    <attr name="textColor" format="reference|color"/>
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- This is the default theme of application -->
+        <item name="colorPrimary">@color/defaultPrimary</item>
+        <item name="colorPrimaryDark">@color/defaultPrimaryDark</item>
+        <item name="colorAccent">@color/defaultAccent</item>
+        <item name="textColor">@color/defaultLightText</item>
+        <!-- action menu item color (arrow and dots) are white -->
+        <item name="android:textColorSecondary">@color/defaultLightText</item>
+
+    </style>
+
+    <!-- custom theme TODO: implement theme preference-->
+    <style name="customThemeOne" parent="@style/AppTheme">
+        <item name="colorPrimary">@color/customOnePrimary</item>
+        <item name="colorPrimaryDark">@color/customOnePrimaryDark</item>
+        <item name="colorAccent">@color/customOneAccent</item>
     </style>
 
 </resources>
