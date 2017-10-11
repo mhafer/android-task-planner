@@ -12,6 +12,8 @@
         <item name="textColor">@color/defaultLightText</item>
         <!-- action menu item color (arrow and dots) are white -->
         <item name="android:textColorSecondary">@color/defaultLightText</item>
+        <item name="android:windowBackground">@color/defaultBody</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
 
     </style>
 
